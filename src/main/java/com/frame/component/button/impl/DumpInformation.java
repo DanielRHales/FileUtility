@@ -35,7 +35,7 @@ public class DumpInformation extends ControlButton {
 
     @Override
     public ImageIcon getIcon() {
-        return new ImageIcon(Resource.DUMP_INFORMATION);
+        return Resource.FRAME_ICON_LOADER.get("DumpInformation_16x16").getIcon();
     }
 
     private void initialize() {

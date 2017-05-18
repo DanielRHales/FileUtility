@@ -7,6 +7,8 @@ import com.resource.Resource;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.ArrayList;
+import java.util.Arrays;
 
 /**
  * @author Daniel
@@ -27,11 +29,11 @@ public class UI extends JFrame {
 
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setTitle("File Utility");
-        setIconImages(Resource.ICONS_LIST);
+        setIconImages(new ArrayList<Image>(Arrays.asList(Resource.FRAME_ICON_LOADER.get("Icon_16x16").getImage(), Resource.FRAME_ICON_LOADER.get("Icon_32x32").getImage())));
         setPreferredSize(Constants.MINIMUM_DIMENSION);
         setMinimumSize(Constants.MINIMUM_DIMENSION);
 
-        selectFiles.setIcon(new ImageIcon(Resource.SEARCH_FILE));
+        selectFiles.setIcon(Resource.FRAME_ICON_LOADER.get("SearchFile_16x16").getIcon());
 
         copyFiles.setEditable(false);
         copyFiles.setFont(new Font("Dialog", Font.BOLD, 12));

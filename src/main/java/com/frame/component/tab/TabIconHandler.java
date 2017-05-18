@@ -1,7 +1,7 @@
 package com.frame.component.tab;
 
-import com.configuration.Constants;
 import com.graphics.Sprite;
+import com.resource.Resource;
 import com.resource.TextUtils;
 
 import javax.swing.*;
@@ -27,12 +27,12 @@ public class TabIconHandler {
     }
 
     private static ImageIcon getTabIcon(String name) {
-        if (Constants.TAB_ICON_LOADER != null) {
-            final Sprite sprite = Constants.TAB_ICON_LOADER.get(name);
+        if (Resource.TAB_ICON_LOADER != null) {
+            final Sprite sprite = Resource.TAB_ICON_LOADER.get(name);
             if (sprite != null) {
                 return sprite.getIcon();
             } else {
-                return Constants.TAB_ICON_LOADER.get("_blank").getIcon();
+                return Resource.TAB_ICON_LOADER.get("_blank").getIcon();
             }
         } else {
             return null;

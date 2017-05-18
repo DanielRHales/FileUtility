@@ -25,7 +25,7 @@ public class FileTab extends JPanel {
         setOpaque(false);
         final JLabel label = new JLabel(file.getName(), TabIconHandler.get(file), SwingConstants.CENTER);
         label.setBorder(new EmptyBorder(0, 5, 0, 5));
-        final JButton button = new JButton(new ImageIcon(Resource.CLOSE));
+        final JButton button = new JButton(Resource.FRAME_ICON_LOADER.get("Close_16x16").getIcon());
         RemoveTabAction.apply(this, button);
         add(label, "Center");
         add(button, "East");

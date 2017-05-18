@@ -21,7 +21,7 @@ public class Sprite {
     private Image image;
     private ImageIcon icon;
 
-    Sprite() {
+    public Sprite() {
     }
 
     public String getName() {

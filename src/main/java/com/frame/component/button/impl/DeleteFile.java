@@ -24,7 +24,7 @@ public class DeleteFile extends ControlButton {
 
     @Override
     public ImageIcon getIcon() {
-        return new ImageIcon(Resource.DELETE_FILE);
+        return Resource.FRAME_ICON_LOADER.get("DeleteFile_16x16").getIcon();
     }
 
     @Override

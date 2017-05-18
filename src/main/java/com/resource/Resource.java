@@ -1,39 +1,30 @@
 package com.resource;
 
+import com.Main;
+import com.frame.component.tab.TabIconHandler;
+import com.graphics.SpriteLoader;
+
 import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.awt.image.FilteredImageSource;
 import java.awt.image.RGBImageFilter;
-import java.util.ArrayList;
-import java.util.Arrays;
+import java.io.DataInputStream;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import java.util.zip.GZIPInputStream;
 
 /**
  * @author Daniel
  */
 public class Resource {
 
-    public static final Image FILE = getResourceImage("File", "png", new Dimension(16, 16));
+    public static final SpriteLoader FRAME_ICON_LOADER = getLoader("/Frame/");
 
-    public static final Image CLOSE = getResourceImage("Close", "png", new Dimension(16, 16));
+    public static final SpriteLoader TAB_ICON_LOADER = getLoader("/Tab/");
 
-    public static final Image DELETE_FILE = getResourceImage("DeleteFile", "png", new Dimension(16, 16));
-
-    public static final Image DUMP_INFORMATION = getResourceImage("DumpInformation", "png", new Dimension(16, 16));
-
-    public static final Image EDIT_FILE = getResourceImage("EditFile", "png", new Dimension(16, 16));
-
-    public static final Image OPEN_DESKTOP_FILE = getResourceImage("OpenDesktopFile", "png", new Dimension(16, 16));
-
-    public static final Image OPEN_BROWSER_FILE = getResourceImage("OpenBrowserFile", "png", new Dimension(16, 16));
-
-    public static final Image PRINT_FILE = getResourceImage("PrintFile", "png", new Dimension(16, 16));
-
-    public static final Image SEARCH_FILE = getResourceImage("SearchFile", "png", new Dimension(16, 16));
-
-    public static ArrayList<Image> ICONS_LIST = new ArrayList<Image>(Arrays.asList(getResourceImage("Icon", "png", new Dimension(16, 16)), getResourceImage("Icon", "png", new Dimension(32, 32))));
-
-    @SuppressWarnings({"SameParameterValue", "WeakerAccess"})
+    @SuppressWarnings({"unused", "SameParameterValue", "WeakerAccess"})
     public static Image getResourceImage(String name, String extension, Dimension dimension) {
         return getResourceImage(String.format("%s_%dx%d", name, dimension.width, dimension.height), extension);
     }
@@ -88,5 +79,14 @@ public class Resource {
         graphics.setComposite(AlphaComposite.SrcOver.derive(transparency));
         graphics.drawImage(image, 0, 0, null);
         return transparentImage;
+    }
+
+    private static SpriteLoader getLoader(String directory) {
+        try {
+            return new SpriteLoader(new DataInputStream(new GZIPInputStream(Main.class.getResourceAsStream(String.format("%sSprites.idx", directory)))), new DataInputStream(new GZIPInputStream(Main.class.getResourceAsStream(String.format("%sSprites.dat", directory)))));
+        } catch (IOException ex) {
+            Logger.getLogger(TabIconHandler.class.getName()).log(Level.WARNING, "Error loading Tab Icons Archive.", ex);
+            return null;
+        }
     }
 }

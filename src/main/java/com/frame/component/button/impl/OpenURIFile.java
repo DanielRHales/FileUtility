@@ -30,7 +30,7 @@ public class OpenURIFile extends ControlButton {
 
     @Override
     public ImageIcon getIcon() {
-        return new ImageIcon(Resource.OPEN_BROWSER_FILE);
+        return Resource.FRAME_ICON_LOADER.get("OpenBrowserFile_16x16").getIcon();
     }
 
     @Override

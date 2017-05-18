@@ -31,7 +31,7 @@ public class OpenDesktopFile extends ControlButton {
 
     @Override
     public ImageIcon getIcon() {
-        return new ImageIcon(Resource.OPEN_DESKTOP_FILE);
+        return Resource.FRAME_ICON_LOADER.get("OpenDesktopFile_16x16").getIcon();
     }
 
     @Override

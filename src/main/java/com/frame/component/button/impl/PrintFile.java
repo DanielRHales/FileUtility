@@ -31,7 +31,7 @@ public class PrintFile extends ControlButton {
 
     @Override
     public ImageIcon getIcon() {
-        return new ImageIcon(Resource.PRINT_FILE);
+        return Resource.FRAME_ICON_LOADER.get("PrintFile_16x16").getIcon();
     }
 
     @Override

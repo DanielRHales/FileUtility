@@ -31,7 +31,7 @@ public class EditFile extends ControlButton {
 
     @Override
     public ImageIcon getIcon() {
-        return new ImageIcon(Resource.EDIT_FILE);
+        return Resource.FRAME_ICON_LOADER.get("EditFile_16x16").getIcon();
     }
 
     @Override
