@@ -7,7 +7,7 @@
 
 <ul>
     <li>
-        <div>Daniel (DRHales)</div>
+    <div><a href="http://forums.arteropk.com/profile/20097-daniel/" title="Daniel">Daniel</a></div>
     </li>
 </ul>
 
