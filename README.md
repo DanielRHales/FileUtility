@@ -2,19 +2,19 @@
 <html>
 <body>
 
-<u><a style="color: #82198c;" title="Toggle Developer Credits" onclick="toggleDevelopers()">Developers Credits</a></u>
+<div>Developer Credits</div>
 <br>
 
-<ul id="developersList" style="display: none;">
+<ul>
     <li>
         <div>Daniel (DRHales)</div>
     </li>
 </ul>
 
-<u><a style="color: #82198c;" title="Toggle Graphical Credits" onclick="toggleGraphics()">Graphical Credits</a></u>
+<div>Graphical Credits</div>
 <br>
 
-<ul id="graphicsList" style="display: none;">
+<ul>
     <li>
         <div>General Icons at <a href="https://www.google.com/" title="Google">Google</a></div>
     </li>
@@ -52,10 +52,10 @@
     </li>
 </ul>
 
-<u><a style="color: #82198c;" title="Toggle Library Credits" onclick="toggleLibraries()">Library Credits</a></u>
+<div>Library Credits</div>
 <br>
 
-<ul id="libraryList" style="display: none;">
+<ul>
     <li>
         <div>Developers of GSON</div>
     </li>
@@ -63,31 +63,6 @@
         <div>Developers of Substance</div>
     </li>
 </ul>
-
-<script language="JavaScript">
-
-    toggleDevelopers = function () {
-        toggle("developersList");
-    };
-
-    toggleGraphics = function () {
-        toggle("graphicsList");
-    };
-
-    toggleLibraries = function () {
-        toggle("libraryList");
-    };
-
-    toggle = function (element) {
-        var x = document.getElementById(element);
-        if (x.style.display === 'none') {
-            x.style.display = 'block';
-        } else {
-            x.style.display = 'none';
-        }
-    };
-
-</script>
 
 </body>
 </html>
